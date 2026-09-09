@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
+	<kcfgfile name="" />
+
+	<group name="general">
+		<entry name="showProcessor" type="Bool">
+			<default>true</default>
+		</entry>
+		<entry name="showMemory" type="Bool">
+			<default>true</default>
+		</entry>
+		<entry name="showSwap" type="Bool">
+			<default>false</default>
+		</entry>
+		<entry name="showNetwork" type="Bool">
+			<default>true</default>
+		</entry>
+		<entry name="showDisk" type="Bool">
+			<default>true</default>
+		</entry>
+		<entry name="showLabels" type="Bool">
+			<default>true</default>
+		</entry>
+		<entry name="fastRefreshTooltips" type="Bool">
+			<default>false</default>
+		</entry>
+	</group>
+
+	<group name="processor">
+		<entry name="processorWidth" type="Int">
+			<default>60</default>
+		</entry>
+		<entry name="processorInterval" type="Int">
+			<default>2000</default>
+		</entry>
+		<entry name="processorUserColor" type="Color">
+			<default>#0072B3</default>
+		</entry>
+		<entry name="processorSystemColor" type="Color">
+			<default>#0092E6</default>
+		</entry>
+		<entry name="processorWaitColor" type="Color">
+			<default>#1A5FB4</default>
+		</entry>
+	</group>
+
+	<group name="memory">
+		<entry name="memoryWidth" type="Int">
+			<default>60</default>
+		</entry>
+		<entry name="memoryInterval" type="Int">
+			<default>2000</default>
+		</entry>
+		<entry name="memoryUsedColor" type="Color">
+			<default>#00B35B</default>
+		</entry>
+		<entry name="memoryBufferColor" type="Color">
+			<default>#00FF82</default>
+		</entry>
+		<entry name="memoryCacheColor" type="Color">
+			<default>#AAF5D0</default>
+		</entry>
+	</group>
+
+	<group name="swap">
+		<entry name="swapWidth" type="Int">
+			<default>60</default>
+		</entry>
+		<entry name="swapInterval" type="Int">
+			<default>2000</default>
+		</entry>
+		<entry name="swapUsedColor" type="Color">
+			<default>#8B00C3</default>
+		</entry>
+	</group>
+
+	<group name="network">
+		<entry name="networkWidth" type="Int">
+			<default>60</default>
+		</entry>
+		<entry name="networkInterval" type="Int">
+			<default>2000</default>
+		</entry>
+		<entry name="networkDownloadColor" type="Color">
+			<default>#FCE94F</default>
+		</entry>
+		<entry name="networkUploadColor" type="Color">
+			<default>#FB74FB</default>
+		</entry>
+	</group>
+
+	<group name="disk">
+		<entry name="diskWidth" type="Int">
+			<default>60</default>
+		</entry>
+		<entry name="diskInterval" type="Int">
+			<default>2000</default>
+		</entry>
+		<entry name="diskReadColor" type="Color">
+			<default>#C65000</default>
+		</entry>
+		<entry name="diskWriteColor" type="Color">
+			<default>#FF6700</default>
+		</entry>
+	</group>
+</kcfg>

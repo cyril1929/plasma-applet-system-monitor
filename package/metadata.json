@@ -1,0 +1,22 @@
+{
+	"KPackageStructure": "Plasma/Applet",
+	"KPlugin": {
+		"Authors": [
+			{
+				"Email": "cyril1929@hotmail.fr",
+				"Name": "Cyril"
+			}
+		],
+		"BugReportUrl": "https://github.com/cyril1929/plasma-applet-system-monitor/issues",
+		"Category": "System Information",
+		"Description": "Applet that displays system resource usage in the panel.",
+		"Description[fr]": "Applet qui affiche l'utilisation des ressources système dans le panneau.",
+		"Icon": "utilities-system-monitor",
+		"Id": "com.github.cyril1929.plasma-applet-system-monitor",
+		"License": "GPLv3",
+		"Name": "System Monitor",
+		"Name[fr]": "Moniteur Système",
+		"Website": "https://github.com/cyril1929/plasma-applet-system-monitor"
+	},
+	"X-Plasma-API-Minimum-Version": "6.0"
+}

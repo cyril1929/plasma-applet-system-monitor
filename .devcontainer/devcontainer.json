@@ -1,0 +1,32 @@
+{
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": {
+			"USERNAME": "${localEnv:USER}"
+		}
+	},
+	"updateRemoteUserUID": true,
+	"securityOpt": [
+		"label=disable"
+	],
+	"mounts": [
+		"source=/etc/localtime,target=/etc/localtime,type=bind,readonly",
+		"source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind",
+		"source=${localEnv:HOME}/.ssh,target=/home/${localEnv:USER}/.ssh,type=bind"
+	],
+	"remoteEnv": {
+		"DISPLAY": "${localEnv:DISPLAY}"
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"redhat.vscode-xml",
+				"TheQtCompany.qt-qml",
+				"timonwong.shellcheck"
+			],
+			"settings": {
+				"qt-qml.doNotAskForQmllsDownload": true
+			}
+		}
+	}
+}
