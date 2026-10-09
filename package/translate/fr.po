@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.cyril1929.plasma-applet-system-monitor\n"
 "Report-Msgid-Bugs-To: cyril1929@hotmail.fr\n"
-"POT-Creation-Date: 2026-10-10 23:29+0200\n"
+"POT-Creation-Date: 2026-10-10 23:32+0200\n"
 "PO-Revision-Date: 2026-09-23 00:23+0200\n"
 "Last-Translator: Cyril <cyril1929@hotmail.fr>\n"
 "Language-Team: French\n"
@@ -21,98 +21,98 @@ msgstr ""
 msgid "General"
 msgstr "Général"
 
-#: ../contents/config/config.qml:13 ../contents/ui/Processor.qml:23
+#: ../contents/config/config.qml:13 ../contents/ui/Processor.qml:24
 #: ../contents/ui/config/configGeneral.qml:27
 msgid "Processor"
 msgstr "Processeur"
 
-#: ../contents/config/config.qml:19 ../contents/ui/Memory.qml:28
+#: ../contents/config/config.qml:19 ../contents/ui/Memory.qml:29
 #: ../contents/ui/config/configGeneral.qml:33
 msgid "Memory"
 msgstr "Mémoire"
 
-#: ../contents/config/config.qml:25 ../contents/ui/Swap.qml:28
+#: ../contents/config/config.qml:25 ../contents/ui/Swap.qml:29
 #: ../contents/ui/config/configGeneral.qml:39
 msgid "Swap"
 msgstr "Échange"
 
-#: ../contents/config/config.qml:31 ../contents/ui/Network.qml:16
+#: ../contents/config/config.qml:31 ../contents/ui/Network.qml:17
 #: ../contents/ui/config/configGeneral.qml:45
 msgid "Network"
 msgstr "Réseau"
 
-#: ../contents/config/config.qml:37 ../contents/ui/Disk.qml:16
+#: ../contents/config/config.qml:37 ../contents/ui/Disk.qml:17
 #: ../contents/ui/config/configGeneral.qml:51
 msgid "Disk"
 msgstr "Disque"
 
-#: ../contents/ui/Disk.qml:26 ../contents/ui/Disk.qml:27
-#: ../contents/ui/Network.qml:26 ../contents/ui/Network.qml:27
+#: ../contents/ui/Disk.qml:27 ../contents/ui/Disk.qml:28
+#: ../contents/ui/Network.qml:27 ../contents/ui/Network.qml:28
 msgid "/s"
 msgstr "/s"
 
-#: ../contents/ui/Disk.qml:38
+#: ../contents/ui/Disk.qml:39
 msgid "read"
 msgstr "lecture"
 
-#: ../contents/ui/Disk.qml:42
+#: ../contents/ui/Disk.qml:43
 msgid "write"
 msgstr "écriture"
 
-#: ../contents/ui/Disk.qml:131
+#: ../contents/ui/Disk.qml:132
 msgid "disk"
 msgstr "disque"
 
-#: ../contents/ui/Memory.qml:61 ../contents/ui/Swap.qml:51
+#: ../contents/ui/Memory.qml:62 ../contents/ui/Swap.qml:52
 msgid "used"
 msgstr "utilisé"
 
-#: ../contents/ui/Memory.qml:66
+#: ../contents/ui/Memory.qml:67
 msgid "buffer"
 msgstr "tampon"
 
-#: ../contents/ui/Memory.qml:71
+#: ../contents/ui/Memory.qml:72
 msgid "cache"
 msgstr "cache"
 
-#: ../contents/ui/Memory.qml:175
+#: ../contents/ui/Memory.qml:172
 msgid "memory"
 msgstr "mémoire"
 
-#: ../contents/ui/Network.qml:38
+#: ../contents/ui/Network.qml:39
 msgid "download"
 msgstr "descendant"
 
-#: ../contents/ui/Network.qml:42
+#: ../contents/ui/Network.qml:43
 msgid "upload"
 msgstr "montant"
 
-#: ../contents/ui/Network.qml:131
+#: ../contents/ui/Network.qml:132
 msgid "network"
 msgstr "réseau"
 
-#: ../contents/ui/Processor.qml:50
+#: ../contents/ui/Processor.qml:51
 msgid "user"
 msgstr "utilisateur"
 
-#: ../contents/ui/Processor.qml:51 ../contents/ui/Processor.qml:55
-#: ../contents/ui/Processor.qml:59
+#: ../contents/ui/Processor.qml:52 ../contents/ui/Processor.qml:56
+#: ../contents/ui/Processor.qml:60
 msgid "cores"
 msgstr "cœurs"
 
-#: ../contents/ui/Processor.qml:54
+#: ../contents/ui/Processor.qml:55
 msgid "system"
 msgstr "système"
 
-#: ../contents/ui/Processor.qml:58
+#: ../contents/ui/Processor.qml:59
 msgid "wait"
 msgstr "attente"
 
-#: ../contents/ui/Processor.qml:168
+#: ../contents/ui/Processor.qml:169
 msgid "processor"
 msgstr "processeur"
 
-#: ../contents/ui/Swap.qml:131
+#: ../contents/ui/Swap.qml:128
 msgid "swap"
 msgstr "échange"
 

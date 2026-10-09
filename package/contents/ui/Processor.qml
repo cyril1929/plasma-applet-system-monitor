@@ -6,6 +6,7 @@ import org.kde.kirigami as Kirigami
 import org.kde.ksysguard.sensors as Sensors
 import org.kde.plasma.core as PlasmaCore
 import org.kde.plasma.plasmoid
+import org.kde.quickcharts as Charts
 
 PlasmaCore.ToolTipArea {
     id: root
@@ -143,14 +144,14 @@ PlasmaCore.ToolTipArea {
             d.currentWait = wait;
             d.currentCoreCount = coreCount;
             d.currentUsage = usage;
-            graphModel.append({
+            graphModel.insert(0, {
                 "user": user,
                 "system": system,
                 "wait": wait
             });
             const overflow = graphModel.count - Plasmoid.configuration.processorWidth;
             if (overflow > 0) {
-                graphModel.remove(0, overflow);
+                graphModel.remove(graphModel.count - overflow, overflow);
             }
         }
     }
@@ -176,47 +177,49 @@ PlasmaCore.ToolTipArea {
             border.width: 1
             color: Kirigami.Theme.backgroundColor
 
-            Item {
+            Charts.BarChart {
+                id: chart
+
                 anchors.fill: parent
                 anchors.margins: 1
-                clip: true
+                direction: Charts.XYChart.ZeroAtEnd
+                layer.enabled: Screen.devicePixelRatio % 1 !== 0
+                layer.smooth: true
+                layer.textureSize: {
+                    const ceilScale = Math.ceil(Screen.devicePixelRatio);
+                    return Qt.size(width * ceilScale, height * ceilScale);
+                }
+                spacing: 0
+                stacked: true
 
-                Repeater {
-                    model: graphModel
-
-                    Item {
-                        id: delegateItem
-
-                        required property int index
-                        required property real system
-                        required property real user
-                        required property real wait
-
-                        height: parent.height
-                        width: 1
-                        x: parent.width - graphModel.count + delegateItem.index
-
-                        Rectangle {
-                            color: Plasmoid.configuration.processorUserColor
-                            height: parent.height * delegateItem.user / 100
-                            width: 1
-                            y: parent.height * (100 - delegateItem.user) / 100
-                        }
-
-                        Rectangle {
-                            color: Plasmoid.configuration.processorSystemColor
-                            height: parent.height * delegateItem.system / 100
-                            width: 1
-                            y: parent.height * (100 - delegateItem.user - delegateItem.system) / 100
-                        }
-
-                        Rectangle {
-                            color: Plasmoid.configuration.processorWaitColor
-                            height: parent.height * delegateItem.wait / 100
-                            width: 1
-                            y: parent.height * (100 - delegateItem.user - delegateItem.system - delegateItem.wait) / 100
-                        }
+                colorSource: Charts.ArraySource {
+                    array: [Plasmoid.configuration.processorUserColor, Plasmoid.configuration.processorSystemColor, Plasmoid.configuration.processorWaitColor]
+                }
+                valueSources: [
+                    Charts.ModelSource {
+                        model: graphModel.count > 0 ? graphModel : null
+                        roleName: "user"
+                    },
+                    Charts.ModelSource {
+                        model: graphModel.count > 0 ? graphModel : null
+                        roleName: "system"
+                    },
+                    Charts.ModelSource {
+                        model: graphModel.count > 0 ? graphModel : null
+                        roleName: "wait"
                     }
+                ]
+
+                xRange {
+                    automatic: false
+                    from: 0
+                    to: Plasmoid.configuration.processorWidth
+                }
+
+                yRange {
+                    automatic: false
+                    from: 0
+                    to: 100
                 }
             }
         }

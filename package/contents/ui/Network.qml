@@ -6,6 +6,7 @@ import "byteFormatter.js" as ByteFormatter
 import org.kde.kirigami as Kirigami
 import org.kde.plasma.core as PlasmaCore
 import org.kde.plasma.plasmoid
+import org.kde.quickcharts as Charts
 
 PlasmaCore.ToolTipArea {
     id: root
@@ -97,13 +98,13 @@ PlasmaCore.ToolTipArea {
             const upload = uploadSensor.consume(d.currentUpload);
             d.currentDownload = download;
             d.currentUpload = upload;
-            graphModel.append({
+            graphModel.insert(0, {
                 "download": download,
                 "upload": upload
             });
             const overflow = graphModel.count - Plasmoid.configuration.networkWidth;
             if (overflow > 0) {
-                graphModel.remove(0, overflow);
+                graphModel.remove(graphModel.count - overflow, overflow);
             }
             let max = 0;
             for (let i = 0; i < graphModel.count; ++i) {
@@ -139,39 +140,45 @@ PlasmaCore.ToolTipArea {
             border.width: 1
             color: Kirigami.Theme.backgroundColor
 
-            Item {
+            Charts.BarChart {
+                id: chart
+
                 anchors.fill: parent
                 anchors.margins: 1
-                clip: true
+                direction: Charts.XYChart.ZeroAtEnd
+                layer.enabled: Screen.devicePixelRatio % 1 !== 0
+                layer.smooth: true
+                layer.textureSize: {
+                    const ceilScale = Math.ceil(Screen.devicePixelRatio);
+                    return Qt.size(width * ceilScale, height * ceilScale);
+                }
+                spacing: 0
+                stacked: true
 
-                Repeater {
-                    model: graphModel
-
-                    Item {
-                        id: delegateItem
-
-                        required property real download
-                        required property int index
-                        required property real upload
-
-                        height: parent.height
-                        width: 1
-                        x: parent.width - graphModel.count + delegateItem.index
-
-                        Rectangle {
-                            color: Plasmoid.configuration.networkDownloadColor
-                            height: parent.height * delegateItem.download / d.graphRange
-                            width: 1
-                            y: parent.height * (d.graphRange - delegateItem.download) / d.graphRange
-                        }
-
-                        Rectangle {
-                            color: Plasmoid.configuration.networkUploadColor
-                            height: parent.height * delegateItem.upload / d.graphRange
-                            width: 1
-                            y: parent.height * (d.graphRange - delegateItem.download - delegateItem.upload) / d.graphRange
-                        }
+                colorSource: Charts.ArraySource {
+                    array: [Plasmoid.configuration.networkDownloadColor, Plasmoid.configuration.networkUploadColor]
+                }
+                valueSources: [
+                    Charts.ModelSource {
+                        model: graphModel.count > 0 ? graphModel : null
+                        roleName: "download"
+                    },
+                    Charts.ModelSource {
+                        model: graphModel.count > 0 ? graphModel : null
+                        roleName: "upload"
                     }
+                ]
+
+                xRange {
+                    automatic: false
+                    from: 0
+                    to: Plasmoid.configuration.networkWidth
+                }
+
+                yRange {
+                    automatic: false
+                    from: 0
+                    to: d.graphRange
                 }
             }
         }
