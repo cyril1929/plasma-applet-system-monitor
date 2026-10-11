@@ -1,0 +1,218 @@
+# Italian translations for com.github.cyril1929.plasma-applet-system-monitor package.
+# Copyright (C) 2026 Cyril
+# This file is distributed under the same license as the com.github.cyril1929.plasma-applet-system-monitor package.
+# Cyril <cyril1929@hotmail.fr>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: com.github.cyril1929.plasma-applet-system-monitor\n"
+"Report-Msgid-Bugs-To: cyril1929@hotmail.fr\n"
+"POT-Creation-Date: 2026-10-10 23:32+0200\n"
+"PO-Revision-Date: 2026-10-11 14:09+0200\n"
+"Last-Translator:  <cyril1929@hotmail.fr>\n"
+"Language-Team: Italian\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../contents/config/config.qml:7
+msgid "General"
+msgstr "Generale"
+
+#: ../contents/config/config.qml:13 ../contents/ui/Processor.qml:24
+#: ../contents/ui/config/configGeneral.qml:27
+msgid "Processor"
+msgstr "Processore"
+
+#: ../contents/config/config.qml:19 ../contents/ui/Memory.qml:29
+#: ../contents/ui/config/configGeneral.qml:33
+msgid "Memory"
+msgstr "Memoria"
+
+#: ../contents/config/config.qml:25 ../contents/ui/Swap.qml:29
+#: ../contents/ui/config/configGeneral.qml:39
+msgid "Swap"
+msgstr "Swap"
+
+#: ../contents/config/config.qml:31 ../contents/ui/Network.qml:17
+#: ../contents/ui/config/configGeneral.qml:45
+msgid "Network"
+msgstr "Rete"
+
+#: ../contents/config/config.qml:37 ../contents/ui/Disk.qml:17
+#: ../contents/ui/config/configGeneral.qml:51
+msgid "Disk"
+msgstr "Disco"
+
+#: ../contents/ui/Disk.qml:27 ../contents/ui/Disk.qml:28
+#: ../contents/ui/Network.qml:27 ../contents/ui/Network.qml:28
+msgid "/s"
+msgstr "/s"
+
+#: ../contents/ui/Disk.qml:39
+msgid "read"
+msgstr "lettura"
+
+#: ../contents/ui/Disk.qml:43
+msgid "write"
+msgstr "scrittura"
+
+#: ../contents/ui/Disk.qml:132
+msgid "disk"
+msgstr "disco"
+
+#: ../contents/ui/Memory.qml:62 ../contents/ui/Swap.qml:52
+msgid "used"
+msgstr "usata"
+
+#: ../contents/ui/Memory.qml:67
+msgid "buffer"
+msgstr "buffer"
+
+#: ../contents/ui/Memory.qml:72
+msgid "cache"
+msgstr "cache"
+
+#: ../contents/ui/Memory.qml:172
+msgid "memory"
+msgstr "memoria"
+
+#: ../contents/ui/Network.qml:39
+msgid "download"
+msgstr "scaricamento"
+
+#: ../contents/ui/Network.qml:43
+msgid "upload"
+msgstr "caricamento"
+
+#: ../contents/ui/Network.qml:132
+msgid "network"
+msgstr "rete"
+
+#: ../contents/ui/Processor.qml:51
+msgid "user"
+msgstr "utente"
+
+#: ../contents/ui/Processor.qml:52 ../contents/ui/Processor.qml:56
+#: ../contents/ui/Processor.qml:60
+msgid "cores"
+msgstr "core"
+
+#: ../contents/ui/Processor.qml:55
+msgid "system"
+msgstr "sistema"
+
+#: ../contents/ui/Processor.qml:59
+msgid "wait"
+msgstr "attesa"
+
+#: ../contents/ui/Processor.qml:169
+msgid "processor"
+msgstr "processore"
+
+#: ../contents/ui/Swap.qml:128
+msgid "swap"
+msgstr "swap"
+
+#: ../contents/ui/byteFormatter.js:10
+msgid "B"
+msgstr "B"
+
+#: ../contents/ui/byteFormatter.js:12
+msgid "KiB"
+msgstr "KiB"
+
+#: ../contents/ui/byteFormatter.js:14
+msgid "MiB"
+msgstr "MiB"
+
+#: ../contents/ui/byteFormatter.js:16
+msgid "GiB"
+msgstr "GiB"
+
+#: ../contents/ui/byteFormatter.js:18
+msgid "TiB"
+msgstr "TiB"
+
+#: ../contents/ui/config/configDisk.qml:21
+#: ../contents/ui/config/configMemory.qml:22
+#: ../contents/ui/config/configNetwork.qml:21
+#: ../contents/ui/config/configProcessor.qml:22
+#: ../contents/ui/config/configSwap.qml:20
+msgid "Width"
+msgstr "Larghezza"
+
+#: ../contents/ui/config/configDisk.qml:29
+#: ../contents/ui/config/configMemory.qml:30
+#: ../contents/ui/config/configNetwork.qml:29
+#: ../contents/ui/config/configProcessor.qml:30
+#: ../contents/ui/config/configSwap.qml:28
+msgid "Refresh interval"
+msgstr "Intervallo di aggiornamento"
+
+#: ../contents/ui/config/configDisk.qml:41
+#: ../contents/ui/config/configMemory.qml:42
+#: ../contents/ui/config/configNetwork.qml:41
+#: ../contents/ui/config/configProcessor.qml:42
+#: ../contents/ui/config/configSwap.qml:40
+msgid "ms"
+msgstr "ms"
+
+#: ../contents/ui/config/configDisk.qml:48
+msgid "Read"
+msgstr "Lettura"
+
+#: ../contents/ui/config/configDisk.qml:55
+msgid "Write"
+msgstr "Scrittura"
+
+#: ../contents/ui/config/configGeneral.qml:21
+msgid "Monitors"
+msgstr "Monitor"
+
+#: ../contents/ui/config/configGeneral.qml:56
+msgid "Appearance"
+msgstr "Aspetto"
+
+#: ../contents/ui/config/configGeneral.qml:62
+msgid "Show labels"
+msgstr "Mostra etichette"
+
+#: ../contents/ui/config/configGeneral.qml:68
+msgid "Fast refresh of tooltips"
+msgstr "Aggiornamento rapido dei suggerimenti"
+
+#: ../contents/ui/config/configMemory.qml:49
+#: ../contents/ui/config/configSwap.qml:47
+msgid "Used"
+msgstr "Usata"
+
+#: ../contents/ui/config/configMemory.qml:56
+msgid "Buffer"
+msgstr "Buffer"
+
+#: ../contents/ui/config/configMemory.qml:63
+msgid "Cache"
+msgstr "Cache"
+
+#: ../contents/ui/config/configNetwork.qml:48
+msgid "Download"
+msgstr "Scaricamento"
+
+#: ../contents/ui/config/configNetwork.qml:55
+msgid "Upload"
+msgstr "Caricamento"
+
+#: ../contents/ui/config/configProcessor.qml:49
+msgid "User"
+msgstr "Utente"
+
+#: ../contents/ui/config/configProcessor.qml:56
+msgid "System"
+msgstr "Sistema"
+
+#: ../contents/ui/config/configProcessor.qml:63
+msgid "Wait"
+msgstr "Attesa"
