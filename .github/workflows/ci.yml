@@ -1,0 +1,66 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  checks_and_build:
+    name: Checks and build
+    runs-on: ubuntu-latest
+    container:
+      image: quay.io/fedora/fedora-minimal:latest
+    steps:
+      - name: Install tools and dependencies
+        run: |
+          dnf install -y \
+            gettext \
+            git \
+            jq \
+            kf6-kdeclarative \
+            kf6-kirigami \
+            kf6-kquickcharts \
+            libksysguard \
+            libplasma \
+            qt6-qtdeclarative-devel \
+            zip
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check lints
+        run: ./lint.sh
+
+      - name: Check formatting
+        run: |
+          ./format.sh
+          if ! git diff --name-only --exit-code
+          then
+            echo "Code formatting issue detected."
+            echo "Please run ./format.sh and commit changes."
+            exit 1
+          fi
+
+      - name: Check translations
+        run: |
+          ./package/translate/merge.sh
+          if ! git diff --name-only --exit-code
+          then
+            echo "Translation files are out of sync with code."
+            echo "Please run ./package/translate/merge.sh, update translations if needed, and commit changes."
+            exit 1
+          fi
+
+      - name: Build archive
+        run: ./build.sh
+
+      - name: Upload plasmoid artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: plasmoid
+          path: "*.plasmoid"
+          if-no-files-found: error
+          retention-days: 7

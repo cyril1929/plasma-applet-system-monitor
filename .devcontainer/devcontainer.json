@@ -21,6 +21,7 @@
 		"vscode": {
 			"extensions": [
 				"redhat.vscode-xml",
+				"redhat.vscode-yaml",
 				"TheQtCompany.qt-qml",
 				"timonwong.shellcheck"
 			],
