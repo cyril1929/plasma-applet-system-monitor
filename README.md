@@ -1,4 +1,4 @@
-# KDE Plasma System Monitor Applet
+# KDE Plasma Panel System Monitor Applet
 
 A KDE plasma applet that displays system resource usage in the panel.
 

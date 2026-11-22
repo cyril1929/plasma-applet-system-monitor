@@ -26,7 +26,7 @@
 		"Icon": "utilities-system-monitor",
 		"Id": "com.github.cyril1929.plasma-applet-system-monitor",
 		"License": "GPLv3",
-		"Name": "System Monitor",
+		"Name": "Panel System Monitor",
 		"Name[cs]": "Monitor systému",
 		"Name[de]": "Systemmonitor",
 		"Name[es]": "Monitor del sistema",
